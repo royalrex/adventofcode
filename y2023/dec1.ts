@@ -1,5 +1,3 @@
-import {content} from "../lib/content";
-
 export const translateHumanNumbers = (value: string) => {
   switch (value) {
     case 'one':
@@ -41,10 +39,9 @@ export const parseLine2 = (line: string) => {
   const m = [];
   const regex = /(\d|one|two|three|four|five|six|seven|eight|nine)/
   let match = []
-  let i = 0
   while (match = regex.exec(line)) {
     m.push(match[0]);
-    line = line.substring(match.index + 1)
+    line = line.substring('index' in match ? (match.index as number) + 1 : 0)
   }
 
   if (!m.length) {
@@ -68,8 +65,3 @@ export const solve2 = (input: string[]): number => {
     return previousValue + parseLine2(currentValue)
   }, 0)
 }
-const main = () => {
-  const c = content(1, 2023)
-  return solve1(c.lines())
-}
-console.log(main())
