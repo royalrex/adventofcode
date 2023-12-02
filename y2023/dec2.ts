@@ -1,5 +1,3 @@
-import {c} from "vitest/dist/reporters-5f784f42";
-
 export const parseGamePairs1 = (games:string) => {
   const gameReg = /(\d+) (\w+)/g
   const pairs = games.split(';')
@@ -46,7 +44,7 @@ export const calculateGamePower = (games:Record<string, number>[]) => {
       return [k, c[k] > v ? c[k] : v] as [string,number]
     })
   }, bag)
-    .filter(([k,v]) => v > 0)
+    .filter(([_,v]) => v > 0)
     .reduce((p, c) => {
       return p * c[1]
     }, 1)
