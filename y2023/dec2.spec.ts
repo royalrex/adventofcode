@@ -80,8 +80,8 @@ describe("dec2", () => {
   })
 
   it('should solve2', () => {
-    const res1 = solve2(content(2, 2023).lines());
-    console.log("solve1", res1)
-    expect(res1).toBeDefined()
+    const res2 = solve2(content(2, 2023).lines());
+    console.log("solve2", res2)
+    expect(res2).toBeDefined()
   })
 })

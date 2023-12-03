@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "vitest",
-    "test:watch": "vitest watch",
+    "test": "vitest --run",
+    "test:watch": "vitest --watch",
     "download": "ts-node ./lib/download-input.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "ts-node": "^10.9.1",
     "vitest": "^0.34.6"
   }
