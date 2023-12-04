@@ -6,7 +6,7 @@ async function downloadInput() {
   const day = (new Date()).getDate()
 
   if (day > 24) return;
-console.log(`session=${process.env.AOC_COOKIE}`)
+
   for (let d = 1; d <= day; d++) {
     const url = `https://adventofcode.com/${year}/day/${d}/input`;
     const response = await (await fetch(url, {headers: {"cookie": `session=${process.env.AOC_COOKIE}`}}));
